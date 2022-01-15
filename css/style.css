@@ -1,6 +1,41 @@
+@font-face {
+    font-family: "Muller";
+    src: local("MullerRegular"),
+        url("../fonts/MullerRegular.woff2") format("woff2"),
+        url("../fonts/MullerRegular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "Muller";
+    src: local("MullerMedium")
+        url("../fonts/MullerMedium.woff2") format("woff2"),
+        url("../fonts/MullerMedium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "Muller";
+    src: local("MullerBold")
+        url("../fonts/MullerBold.woff2") format("woff2"),
+        url("../fonts/MullerBold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+  }
 
+
+html {
+    font-size: 16px;
+    box-sizing: border-box;
+}
 
 body {
+    font-family: Muller, sans-serif;
     background: #E5E5E5;
 }
 
@@ -11,24 +46,39 @@ body {
     margin: 0;
 }
 
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 p {
     padding: 0;
     margin: 0;
 }
 
 .section {
-    margin-bottom: 70px;
+    margin-bottom: 2em;
 }
 
 .title {
-    padding-left: 45px;
+    position: relative;
+    padding-left: 1em;
 
     font-style: normal;
     font-weight: normal;
-    font-size: 40px;
-    line-height: 40px;
+    font-size: 2em;
+    line-height: 3em;
 
     color: #333333;
+}
+
+.title::before {
+    position: absolute;
+    content: url('../group.svg');
+    width: 10px;
+    height: 10px;
+    top: 0;
+    left: 20px;
 }
 
 .flex {
@@ -57,11 +107,13 @@ p {
 }
 
 .head {
+    flex-wrap: wrap;
     margin-bottom: 30px;
     justify-content: space-between;
 }
 
 .heaser__left {
+    flex-wrap: wrap;
     align-items: center;
 }
 
@@ -89,6 +141,7 @@ p {
 
 .navigation {
     justify-content: space-between;
+    flex-wrap: wrap;
     padding: 14px 45px;
 
     background: #FFFFFF;
@@ -96,13 +149,14 @@ p {
 }
 
 .navigation__menu {
+    flex-wrap: wrap;
     align-items: center;
 }
 
 .navigation__item__link {
     font-style: normal;
     font-weight: normal;
-    font-size: 16px;
+    font-size: 1em;
     line-height: 16px;
 
     color: #666666;
@@ -151,34 +205,49 @@ p {
 
 .fore {
    flex-wrap: wrap;
+   justify-content: space-around;
+   column-gap: 1em;
 }
 
 
 .fore__item {
     max-width: 275px;
+    position: relative;
+    align-self: center;
     margin-bottom: 23px;
     padding: 117px 42px 41px 45px;
-
 
     background: #FFFFFF;
 }
 
+
+.fore__item::before {
+    content: 'НОВИНКА';
+    position: absolute;
+    top: 5px;
+    right: 20px;
+    border: 1px solid red;
+    color: white;
+    background-color: red;
+    border-radius: 2px;
+    padding: 2px 2px 0 2px;
+}
 
 .fore__item__text {
     max-width: 188px;
 
     font-style: normal;
     font-weight: normal;
-    font-size: 16px;
+    font-size: 1em;
     line-height: 200%;
 
     color: #000000;
 }
 
 
-.fore__item:not(:nth-child(4n)) {
+/* .fore__item:not(:nth-child(4n)) {
     margin-right: 23px;
-}
+} */
 
 .item__icon__01 {
     background: url(../img/bathtub.svg) top 40px left 45px no-repeat #FFFFFF;
